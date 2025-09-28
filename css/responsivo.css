@@ -1,0 +1,147 @@
+
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      gap: 20px;
+    }
+
+    section {
+      padding: 20px;
+    }
+}
+
+  @media (max-width: 992px) {
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+
+    header img {
+      width: 130px;
+      height: 130px;
+    }
+
+    nav ul {
+      gap: 15px;
+    }
+
+    section {
+      padding: 18px;
+    }
+}
+
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      background: #1a1a1a;
+      position: fixed;
+      top: 60px;
+      left: -100%;
+      width: 100%;
+      padding: 20px;
+      transition: left 0.3s ease;
+      border-top: 1px solid #00ffcc;
+    }
+
+    nav ul.active {
+      left: 0;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+    }
+
+    section {
+      margin: 20px 15px;
+      padding: 15px;
+    }
+}
+
+  @media (max-width: 576px) {
+    header h1 {
+      font-size: 1.6rem;
+    }
+
+    header p {
+      font-size: 0.9rem;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .social-icons a {
+      font-size: 1.3rem;
+      margin: 0 5px;
+    }
+
+    section {
+      margin: 15px 10px;
+      padding: 12px;
+    }
+    
+    /* Botão Hamburguer */
+
+     @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+      position: fixed;
+      top: 18px;
+      right: 20px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 15px;
+      background: #1a1a1a;
+      position: fixed;
+      top: 60px;
+      left: -100%;
+      width: 100%;
+      padding: 20px;
+      transition: left 0.3s ease;
+      border-top: 1px solid #00ffcc;
+      height: calc(100vh - 60px);
+      overflow-y: auto;
+    }
+
+    nav ul.active {
+      left: 0;
+    }
+
+    /* Animação do hamburger ao abrir */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    }
+  }

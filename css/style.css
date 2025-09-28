@@ -1,0 +1,230 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0a0a0a, #111111);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 100px 20px 60px;
+    position: relative;
+    margin-top: 60px;
+  }
+
+  header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00ffcc;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffcc;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease;
+    text-shadow: 0 0 5px #00ffcc;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    animation: fadeInUp 1s ease;
+    color: #b0b0b0;
+  }
+
+  .social-icons {
+    margin-top: 15px;
+  }
+
+  .social-icons a {
+    color: #e0e0e0;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #00ffcc;
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.15);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  section h2 {
+    color: #00ffcc;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 5px;
+    text-shadow: 0 0 5px #00ffcc;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-left: 3px solid #333;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s;
+    border-radius: 6px;
+  }
+
+  ul li:hover {
+    border-color: #00ffcc;
+    background: rgba(0, 255, 204, 0.1);
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+    color: #b0b0b0;
+    margin-top: 30px;
+    box-shadow: 0 -2px 10px rgba(0, 255, 204, 0.2);
+  }
+
+  /* Animações */
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Botão Hamburguer */
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #00ffcc;
+    transition: all 0.3s ease;
+  }
+
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    color: #00ffcc;
+    font-weight: bold;
+  }
+
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* aparece acima do item */
+    left: 50%;
+    margin-left: -110px; /* centraliza */
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 12px rgba(0,255,204,0.3);
+    border: 1px solid #00ffcc;
+    font-size: 0.9rem;
+  }
+
+  /* Seta embaixo da tooltip */
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* parte inferior da tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent;
+  }
+
+  /* Mostrar tooltip ao passar o mouse */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
